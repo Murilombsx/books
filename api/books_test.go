@@ -42,7 +42,7 @@ func TestBooksHandler(t *testing.T) {
 		},
 		{
 			name:           "Test Invalid Limit",
-			url:            "/books?title=flowers&limit=200",
+			url:            "/books?title=flowers&limit=11",
 			want:           "invalid limit",
 			wantHttpStatus: http.StatusBadRequest,
 			mockProvider: func() DataProviderMock {

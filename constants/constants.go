@@ -9,4 +9,3 @@ const (
 )
 
 var URL = "https://www.googleapis.com/books/v1/volumes"
-var Key = "AIzaSyA_n0PKXVJztj3KQgWzYWQq07h6WfeF2n0"

@@ -41,3 +41,27 @@ curl -s -X GET "localhost:8080/books?title=math&limit=2"
 }
 ```
 
+## Kubernetes Instructions
+
+First we need to tag the Docker Image created before:
+```
+docker tag books-api murilobarceloss/books-api
+```
+
+After that we need to push the Docker Image to the Docker Repositories:
+```
+docker push murilobarceloss/books-api
+```
+
+With the Image ready to be used we can apply the `deployment.yml` file:
+
+```
+kubectl apply -f deployment.yml
+```
+
+Once the **Deployment** and **Pods** are ready, we can register the Service and get the address(I used `minikube` locally):
+```
+minikube service books-api-service
+```
+
+With all up and running we can execute the same tests using the IP provided by `minikube`.

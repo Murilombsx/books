@@ -69,7 +69,7 @@ func validateParams(params dataprovider.BooksParams) (string, bool) {
 	var validationErrors []string
 
 	// Validate limit and store result
-	if params.Limit <= 1 || params.Limit >= 200 {
+	if params.Limit <= 1 || params.Limit >= 11 {
 		validationErrors = append(validationErrors, "invalid limit")
 	}
 

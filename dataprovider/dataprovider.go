@@ -75,7 +75,6 @@ func (f DataProvider) fetchURL(url string, params *BooksParams, c chan<- fetchRe
 		return
 	}
 	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("X-goog-api-key", constants.Key)
 
 	// Retry requests if they fail, I'll use a simple linear backoff
 	// Backoff will wait for the current number of attempts in seconds
